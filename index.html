@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
     <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale = 1">
 <title>Etch-A-Sketch</title>
-<link rel="stylesheet" href="">
+<link rel="stylesheet" href="style.css">
 
     </head>
     <body>
@@ -15,7 +16,29 @@
 
         <script>
 
-const container = document.querySelector("#container")
+const container = document.querySelector("#container");
+
+
+for (let i=0;  i< 2 ; i++) {
+
+  const container2 =document.createElement('div');
+  container2.classList.add('container2');
+  container.appendChild(container2);
+
+for (let i =0;i <2; i++) {
+
+    const square = document.createElement('div');
+    square.classList.add('square');
+    container2.appendChild(square);
+}
+
+
+}
+
+
+
+
+
 
 
         </script>
@@ -24,6 +47,8 @@ const container = document.querySelector("#container")
 
 
 <!-- 
+
+    create a grid
 
 
 
