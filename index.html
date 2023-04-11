@@ -9,8 +9,9 @@
     </head>
     <body>
 
-        <div id="container"></div>
+<button>number button</button>
 
+<div id="container"></div>
 
 
 
@@ -18,22 +19,41 @@
 
 const container = document.querySelector("#container");
 
+const button1 = document.querySelector('button');
 
-for (let i=0;  i< 16 ; i++) {
+//const numberSquares =
+let n;
+button1.addEventListener('click',()=>  {n = prompt('enter a number for grids');
+console.log(n);}
+);
+
+
+
+// create the grid
+
+
+for (let i=0;  i< 2 ; i++) {
 
   const container2 =document.createElement('div');
   container2.classList.add('container2');
+  //container2.style.cssText = 'border-color:brown;';// another way to change CSS
   container.appendChild(container2);
 
 for (let i =0;i <16; i++) {
 
     const square = document.createElement('div');
     square.classList.add('square');
+    //square.setAttribute('style', 'border-color:black;')// se sadded an attribute
     container2.appendChild(square);
 }
 
 
 }
+
+// adding the hover effect for changing color
+const squares = document.querySelectorAll('.square');
+
+squares.forEach(squarex => squarex.addEventListener('mouseover',() => squarex.style.backgroundColor ='yellow'));
 
 
 
@@ -50,6 +70,10 @@ for (let i =0;i <16; i++) {
 
     create a grid
 
+odelist html collection
+
+a node a dom node
+a group of nodes
 
 
  -->
