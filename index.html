@@ -9,7 +9,7 @@
     </head>
     <body>
 
-<button>number button</button>
+<button>Create new grid</button>
 
 <div id="container"></div>
 
@@ -19,45 +19,98 @@
 
 const container = document.querySelector("#container");
 
-const button1 = document.querySelector('button');
-
-//const numberSquares =
-let n;
-button1.addEventListener('click',()=>  {n = prompt('enter a number for grids');
-console.log(n);}
-);
+const button = document.querySelector('button');
 
 
 
-// create the grid
+// Create the grid
 
+function createGrid(numberSquares = 10){
 
-for (let i=0;  i< 2 ; i++) {
+for (let i=0;  i< numberSquares ; i++) {
 
   const container2 =document.createElement('div');
   container2.classList.add('container2');
-  //container2.style.cssText = 'border-color:brown;';// another way to change CSS
   container.appendChild(container2);
 
-for (let i =0;i <16; i++) {
+for (let i =0;i <numberSquares; i++) {
 
     const square = document.createElement('div');
     square.classList.add('square');
-    //square.setAttribute('style', 'border-color:black;')// se sadded an attribute
     container2.appendChild(square);
 }
 
+}
 
 }
 
-// adding the hover effect for changing color
+createGrid();
+
+
+
+// Adding the hover effect for changing color
+
 const squares = document.querySelectorAll('.square');
 
 squares.forEach(squarex => squarex.addEventListener('mouseover',() => squarex.style.backgroundColor ='yellow'));
 
 
+//getting the width of the previous grid
+
+let gridHeight = container.clientHeight;
+
+console.log(gridHeight);
+
+//Adding a button for a new grid
+
+button.addEventListener('click',function() {
+    numberSquares = prompt('Please enter a number of squares per side for the new grid');
+    // test if numsuares is less than 100
+if (numberSquares > 50 ) {
+    alert('Please enter a number below 50');
+    return;
+}
+
+// Assignning new width/heigth to the squares 
+
+    let squareHeight = gridHeight /numberSquares;
+
+// Removing the old grid
+const allContainer2 = document.querySelectorAll('.container2');
+
+allContainer2.forEach(x => x.remove())
+
+// Create new grid
 
 
+for (let i=0;  i< numberSquares ; i++) {
+
+const container2 =document.createElement('div');
+container2.classList.add('container2');
+
+container.appendChild(container2);
+
+for (let i =0;i <numberSquares; i++) {
+
+  const square = document.createElement('div');
+  square.classList.add('square');
+  square.style.width = squareHeight+ 'px';
+  square.style.height = squareHeight +'px';
+  container2.appendChild(square);
+}
+
+}
+
+// adding the hover effect for changing color
+
+const squares = document.querySelectorAll('.square');
+
+squares.forEach(squarex => squarex.addEventListener('mouseover',() => squarex.style.backgroundColor ='yellow'));
+
+});
+
+
+// 
 
 
 
@@ -68,12 +121,8 @@ squares.forEach(squarex => squarex.addEventListener('mouseover',() => squarex.st
 
 <!-- 
 
-    create a grid
-
-odelist html collection
-
-a node a dom node
-a group of nodes
+html element
+attributes for 
 
 
  -->

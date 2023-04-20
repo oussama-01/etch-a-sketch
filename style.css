@@ -1,5 +1,6 @@
 
 
+
 #container {
 
     border: 6px solid red;
@@ -16,8 +17,9 @@
 }
 
 .square {
+    box-sizing: border-box;
     border: 2px solid green;
-width: 50px;
-height: 50px;
+    width: 30px;
+    height: 30px;
 
 }
