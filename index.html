@@ -1,136 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale = 1">
-        <title>Etch-A-Sketch</title>
-        <link rel="stylesheet" href="style.css">
 
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Etch A Sketch</title>
+    <link rel="stylesheet" href="./style.css">
 
-        <button>Create new grid</button>
-        <br>
-        <div id="container"></div>
+</head>
 
+<body>
 
-    <script>
+    <button>Create new grid</button>
 
-        // Tageting the div and button elements
-
-        const container = document.querySelector("#container");
-
-        const button = document.querySelector('button');
+    <div id="container"></div>
 
 
-        // Create the first grid
+ <!-- -------- SCRIPT ------- -->
+<script>
 
-        function createGrid(numberSquares = 16) {
+// Tageting the div and button elements
 
-            for (let i = 0; i < numberSquares; i++) {
+const container = document.querySelector("#container");
 
-                const container2 = document.createElement('div');
-                container2.classList.add('container2');
-                container.appendChild(container2);
+const button = document.querySelector('button');
 
-                for (let i = 0; i < numberSquares; i++) {
 
-                    const square = document.createElement('div');
-                    square.classList.add('square');
-                    container2.appendChild(square);
-                }
+// Create the first grid
 
-            }
+function createGrid(numberSquares = 16) {
 
+    for (let i = 0; i < numberSquares; i++) {
+
+        const container2 = document.createElement('div');
+        container2.classList.add('container2');
+        container.appendChild(container2);
+
+        for (let i = 0; i < numberSquares; i++) {
+
+            const square = document.createElement('div');
+            square.classList.add('square');
+            container2.appendChild(square);
         }
 
-        createGrid();
+    }
+
+}
+
+createGrid();
 
 
 
-        // Adding the hover effect for changing color
+// Adding the hover effect for changing color
 
-        const squares = document.querySelectorAll('.square');
+const squares = document.querySelectorAll('.square');
 
-        squares.forEach(squarex => squarex.addEventListener('mouseover',() => squarex.style.backgroundColor ='yellow'));
-
-
-        //getting the width of the previous grid
-
-        let gridHeight = container.clientHeight;
-
-        console.log(gridHeight);
-
-        //Adding a button for a new grid
-
-        button.addEventListener('click', function () {
-            numberSquares = prompt('Please enter a number of squares per side for the new grid');
-
-            // test if numsuares is less than 100
-            if (numberSquares > 80) {
-                alert('Please enter a number below 80');
-                return;
-            }
-
-            // Assignning new width/heigth to the squares 
-
-            let squareHeight = gridHeight / numberSquares;
-
-            // Removing the old grid
-            const allContainer2 = document.querySelectorAll('.container2');
-
-            allContainer2.forEach(x => x.remove())
-
-            // Create new grid
+squares.forEach(squarex => squarex.addEventListener('mouseover', () => squarex.style.backgroundColor = randomColor()));
 
 
-            for (let i = 0; i < numberSquares; i++) {
+//getting the width of the previous grid
 
-                const container2 = document.createElement('div');
-                container2.classList.add('container2');
+let gridHeight = container.clientHeight;
 
-                container.appendChild(container2);
+console.log(gridHeight);
 
-                for (let i = 0; i < numberSquares; i++) {
+//Adding a button for a new grid
 
-                    const square = document.createElement('div');
-                    square.classList.add('square');
-                    square.style.width = squareHeight + 'px';
-                    square.style.height = squareHeight + 'px';
-                    container2.appendChild(square);
-                }
+button.addEventListener('click', function () {
+    numberSquares = prompt('Please enter a number of squares per side for the new grid');
 
-            }
+    // test if numsuares is less than 100
+    if (numberSquares > 100) {
+        alert('Please enter a number below 101');
+        return;
+    }
 
-            // adding the hover effect for changing color
+    // Assignning new width/heigth to the squares 
 
-            const squares = document.querySelectorAll('.square');
+    let squareHeight = gridHeight / numberSquares;
 
-            squares.forEach(squarex => squarex.addEventListener('mouseover', () => squarex.style.backgroundColor = randomColor()));
+    // Removing the old grid
+    const allContainer2 = document.querySelectorAll('.container2');
+
+    allContainer2.forEach(x => x.remove())
+
+    // Create new grid
 
 
-          });
+    for (let i = 0; i < numberSquares; i++) {
 
-            // A function that generate a random color 
+        const container2 = document.createElement('div');
+        container2.classList.add('container2');
 
-            function randomColor() {
-                let h = Math.floor(Math.random() * 361);
-                //let s = Math.floor(Math.random() * 101);
-                //let l = Math.floor(Math.random() * 101);
-                return `hsl(${h}, 100%, 50%)`;
-            }
+        container.appendChild(container2);
 
-            console.log(randomColor());
+        for (let i = 0; i < numberSquares; i++) {
 
-        </script>
-    </body>
+            const square = document.createElement('div');
+            square.classList.add('square');
+            square.style.width = squareHeight + 'px';
+            square.style.height = squareHeight + 'px';
+            container2.appendChild(square);
+        }
+
+    }
+
+    // adding the hover effect for changing color
+
+    const squares = document.querySelectorAll('.square');
+
+    squares.forEach(squarex => squarex.addEventListener('mouseover', () => squarex.style.backgroundColor = randomColor()));
+
+
+});
+
+// A function that generate a random color 
+
+function randomColor() {
+    let h = Math.floor(Math.random() * 361);
+    //let s = Math.floor(Math.random() * 101);
+    //let l = Math.floor(Math.random() * 101);
+    return `hsl(${h}, 100%, 50%)`;
+}
+
+console.log(randomColor());
+
+</script>
+</body>
+
 </html>
 
 
 <!-- 
-
-html element
-attributes for 
 
 
  -->
