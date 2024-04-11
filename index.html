@@ -3,135 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Etch A Sketch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch a sketch 2</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 
 </head>
 
 <body>
+    <button>New grid</button>
+    <div class="container"></div>
 
-    <button>Create new grid</button>
-
-    <div id="container"></div>
-
-
- <!-- -------- SCRIPT ------- -->
-<script>
-
-// Tageting the div and button elements
-
-const container = document.querySelector("#container");
-
-const button = document.querySelector('button');
-
-
-// Create the first grid
-
-function createGrid(numberSquares = 16) {
-
-    for (let i = 0; i < numberSquares; i++) {
-
-        const container2 = document.createElement('div');
-        container2.classList.add('container2');
-        container.appendChild(container2);
-
-        for (let i = 0; i < numberSquares; i++) {
-
-            const square = document.createElement('div');
-            square.classList.add('square');
-            container2.appendChild(square);
-        }
-
-    }
-
-}
-
-createGrid();
-
-
-
-// Adding the hover effect for changing color
-
-const squares = document.querySelectorAll('.square');
-
-squares.forEach(squarex => squarex.addEventListener('mouseover', () => squarex.style.backgroundColor = randomColor()));
-
-
-//getting the width of the previous grid
-
-let gridHeight = container.clientHeight;
-
-console.log(gridHeight);
-
-//Adding a button for a new grid
-
-button.addEventListener('click', function () {
-    numberSquares = prompt('Please enter a number of squares per side for the new grid');
-
-    // test if numsuares is less than 100
-    if (numberSquares > 100) {
-        alert('Please enter a number below 101');
-        return;
-    }
-
-    // Assignning new width/heigth to the squares 
-
-    let squareHeight = gridHeight / numberSquares;
-
-    // Removing the old grid
-    const allContainer2 = document.querySelectorAll('.container2');
-
-    allContainer2.forEach(x => x.remove())
-
-    // Create new grid
-
-
-    for (let i = 0; i < numberSquares; i++) {
-
-        const container2 = document.createElement('div');
-        container2.classList.add('container2');
-
-        container.appendChild(container2);
-
-        for (let i = 0; i < numberSquares; i++) {
-
-            const square = document.createElement('div');
-            square.classList.add('square');
-            square.style.width = squareHeight + 'px';
-            square.style.height = squareHeight + 'px';
-            container2.appendChild(square);
-        }
-
-    }
-
-    // adding the hover effect for changing color
-
-    const squares = document.querySelectorAll('.square');
-
-    squares.forEach(squarex => squarex.addEventListener('mouseover', () => squarex.style.backgroundColor = randomColor()));
-
-
-});
-
-// A function that generate a random color 
-
-function randomColor() {
-    let h = Math.floor(Math.random() * 361);
-    //let s = Math.floor(Math.random() * 101);
-    //let l = Math.floor(Math.random() * 101);
-    return `hsl(${h}, 100%, 50%)`;
-}
-
-console.log(randomColor());
-
-</script>
 </body>
 
 </html>
-
-
-<!-- 
-
-
- -->

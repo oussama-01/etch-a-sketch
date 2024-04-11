@@ -1,5 +1,6 @@
 # etch-a-sketch
 
-This project is about a browser version of something between a sketchpad and an Etch-A-Sketch.
+This project is about a browser version of something between a sketchpad and an Etch-A-Sketch. (https://en.wikipedia.org/wiki/Etch_A_Sketch)
 
-In this project I use the DOM manipulation.
+The goal of this project is to practice the manipulation of the DOM.
+
