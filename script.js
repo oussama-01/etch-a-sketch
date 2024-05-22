@@ -1,7 +1,7 @@
 
 
 
-// creating a 16*16 grid of square divs
+// Creating a 16*16 grid of square divs
 
 const container = document.querySelector('.container');
 
@@ -42,16 +42,16 @@ function setHoverEffect() {
 }
 
 
-// adding button for number of squares per side
+// Adding button for number of squares per side
 
 const button = document.querySelector('button');
 
 button.addEventListener('click', () => {
     const squareNumbers = prompt('Numbers of squares');
-    if (squareNumbers >100) return alert('Numbers of squares should be less than 101');
+    if (squareNumbers > 100) return alert('Numbers of squares should be less than 101');
 
     const squareWidth = `${container.clientWidth / squareNumbers}px`;
-    console.log([ squareNumbers, squareWidth]);
+    console.log([squareNumbers, squareWidth]);
 
     // to remove the old grid
     const hdiv = document.querySelectorAll('.hdiv');

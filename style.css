@@ -1,5 +1,3 @@
-
-
 * {}
 
 html {}
@@ -8,17 +6,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 98vh;
+    min-height: 98vh;
     justify-content: center;
-    /* background-color: crimson; */
-    background-image: linear-gradient(45deg, #ff8720, #e860ff);
-    background-image: url(/home/oussama/Pictures/tent_1280.png);
+
+    background-color: #FFCC80; 
+/*     background-image: linear-gradient(45deg, #ff8720, #e860ff);
+    background-image: url(/home/oussama/Pictures/); */
 }
 
 .container {
-    display: inline-block;
-    border: 1px solid rgb(255, 131, 131);
-background-color: white;
+
+    border: 5px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 168);
 }
 
 
@@ -49,5 +48,3 @@ button {
 button:hover {
     scale: 1.1;
 }
-
-
